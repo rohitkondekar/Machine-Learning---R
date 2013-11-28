@@ -16,8 +16,6 @@
 require(tm)
 require(ggplot2)
 
-setwd("/Projects/ML - R/Spam classifier")
-
 #set different paths for different datas
 
 spam.path <- "data/spam/" 
@@ -159,8 +157,8 @@ summary(ham.res)
 
 #doing this for classifying all email types
 spam.classifier <- function(path){
-  email.spam <- classify.email(path,spam.df,prior=0.2)
-  email.ham <- classify.email(path,ham.df,prior=0.8)
+  email.spam <- classify.email(path,spam.df,prior=0.3)
+  email.ham <- classify.email(path,ham.df,prior=0.7)
   return(c(email.spam,email.ham,ifelse(email.spam>email.ham,1,0)))
 }
 
